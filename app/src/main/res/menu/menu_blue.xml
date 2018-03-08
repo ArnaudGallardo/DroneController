@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/blueon"
+        android:title="Bluetooth ON"/>
+    <item android:id="@+id/blueoff"
+        android:title="Bluetooth OFF" />
+    <item android:id="@+id/showpaired"
+        android:title="Show Paired Devices" />
+    <item android:id="@+id/discover"
+        android:title="Discover New Devices" />
+</menu>
