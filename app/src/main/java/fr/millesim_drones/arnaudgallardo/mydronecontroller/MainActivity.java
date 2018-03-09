@@ -37,7 +37,6 @@ import java.util.UUID;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView mBluetoothStatus;
     private TextView mReadBuffer;
     private BluetoothAdapter mBTAdapter;
