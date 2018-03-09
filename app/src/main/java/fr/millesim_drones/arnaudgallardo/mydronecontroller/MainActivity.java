@@ -114,10 +114,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onMove(int angle, int strength) {
                     // do whatever you want
-                    String text = "Joystick2\nAngle : " + String.valueOf(angle) + "\nStrength : " + String.valueOf(strength);
+                    double x, y;
+                    double anglerad = (angle * Math.PI) / 180;
+                    x = strength * Math.cos(anglerad) / 100;
+                    y = strength * Math.sin(anglerad) / 100;
+                    String text = "Joystick2\nX : " + String.valueOf(x) + "\nY : " + String.valueOf(y);
                     j2.setText(text);
                     if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("2a" + String.valueOf(angle) + "s" + String.valueOf(strength));
+                        mConnectedThread.write("2x" + String.valueOf(x) + "y" + String.valueOf(y));
                 }
             });
 
@@ -126,10 +130,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onMove(int angle, int strength) {
                     // do whatever you want
-                    String text = "Joystick1\nAngle : " + String.valueOf(angle) + "\nStrength : " + String.valueOf(strength);
+                    double x, y;
+                    double anglerad = (angle * Math.PI) / 180;
+                    x = strength * Math.cos(anglerad) / 100;
+                    y = strength * Math.sin(anglerad) / 100;
+                    String text = "Joystick1\nX : " + String.valueOf(x) + "\nY : " + String.valueOf(y);
                     j1.setText(text);
                     if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("1a" + String.valueOf(angle) + "s" + String.valueOf(strength));
+                        mConnectedThread.write("1x" + String.valueOf(x) + "y" + String.valueOf(y));
                 }
             });
         }
